@@ -1,0 +1,61 @@
+<div class="container" >
+	<div class=" row">
+		<br><br><br><br><br><br><br>
+		<div class="offset-3"></div>
+		<div class="col-md-6" id=itemName>
+			<form name="form" #f="ngForm" (ngSubmit)="f.form.valid && sendItem()" novalidate class="feedback-form">
+				<label for="name">Item Name: </label>
+				<br>
+				<!-- Name -->
+				<div class="form-group">
+
+					<input type="text" id="name" class="form-control" name="name" placeholder="Item name"
+						[(ngModel)]="model.name" #name="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required />
+					<!-- input validation group -->
+					<div id=req *ngIf="f.submitted && name.invalid" class="invalid-input">
+						<!-- individual validation errors -->
+						<div id=req *ngIf="name.errors?.required">Field is required</div>
+					</div>
+
+				</div>
+
+
+				<br>
+				<label for="amount">Amount: </label>
+				<!-- Amount -->
+				<div class="form-group">
+
+					<input type="number" min="0" id="amount" class="form-control" name="amount"
+						placeholder="Item Amount" [(ngModel)]="model.amount" #amount="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && amount.invalid }" required />
+					<div id=req *ngIf="f.submitted && amount.invalid" class="invalid-input">
+						<!-- individual validation errors -->
+						<div id=req *ngIf="amount.errors?.required">Field is required</div>
+					</div>
+				</div>
+
+				<!-- inventory code -->
+				<br>
+				<label for="inventCode">Inventory code: </label>
+				<div class="form-group">
+
+					<input type="text" id="inventCode" class="form-control" name="inventCode" placeholder="Item code"
+						[(ngModel)]="model.inventCode" #inventCode="ngModel"
+						[ngClass]="{ 'is-invalid': f.submitted && inventCode.invalid }" required />
+					<div id=req *ngIf="f.submitted && inventCode.invalid" class="invalid-input">
+						<!-- individual validation errors -->
+						<div id=req *ngIf="inventCode.errors?.required">Field is required</div>
+					</div>
+				</div>
+
+				<br>
+				<button id=butt type="submit" class="btn btn-info pull-right">
+					<i class="fa fa-envelope-o"></i>
+					<span>Add Item</span>
+				</button>
+			</form>
+		</div>
+		<div class="offset-3"></div>
+	</div>
+</div>

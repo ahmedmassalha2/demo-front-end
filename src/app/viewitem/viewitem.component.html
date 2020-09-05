@@ -1,0 +1,33 @@
+<body>
+
+    <input type="number" min="0" id="myInput" [(ngModel)]="id" placeholder="Search for Item by ID..">
+    <form name="form" #f="ngForm" (ngSubmit)="getItem()" novalidate class="feedback-form">
+        <button id = "butt" type="submit" class="btn btn-info pull-right">
+            <i class="fa fa-envelope-o"></i>
+            <span>Search</span>
+        </button>
+    </form>
+    <br>
+    <div class="container">
+        <table class="table table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID </th>
+                    <th>Name </th>
+                    <th>Amount </th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{item.itemID}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.amount}}</td>
+                    <td>{{item.inventCode}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</body>

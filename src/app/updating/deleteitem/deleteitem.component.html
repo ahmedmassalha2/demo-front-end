@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <br><br><br><br><br><br><br>
+        <div class="offset-3"></div>
+        <div class="col-md-6" id=itemName>
+            <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && deleteItem()" novalidate class="feedback-form">
+
+                <br>
+                <label for="id">Item ID </label>
+                <!-- id -->
+                <div class="form-group">
+
+                    <input type="number" min="0" id="id" class="form-control" name="id" placeholder="Item id"
+                        [(ngModel)]="id" required />
+
+                </div>
+
+
+                <br>
+                <button id="butt" type="submit" class="btn btn-info pull-right">
+                    <i class="fa fa-envelope-o"></i>
+                    <span>Delete Item</span>
+                </button>
+            </form>
+        </div>
+        <div class="offset-3"></div>
+    </div>
+</div>
